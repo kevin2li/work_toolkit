@@ -11,7 +11,12 @@ from pdfrw import PdfReader, PdfWriter
 app = typer.Typer()
 
 @app.command(name="subset", help="截取pdf文件部分页面")
-def subset(input_path:str, start_page: int =1, end_page: int =-1, output_path:str=None):
+def subset(
+    input_path: str = typer.Argument(...),
+    start_page: int = typer.Option(1, "--start-page", "-s", help="start page number"),
+    end_page: int = typer.Option(-1, "--end-page", "-e", help="end page number"),
+    output_path: str = typer.Option(None, "--output-path", "-o", help="output path"),
+):
     """截取pdf文件部分页面
 
     Args:
@@ -39,7 +44,10 @@ def subset(input_path:str, start_page: int =1, end_page: int =-1, output_path:st
         traceback.print_exc()
 
 @app.command(name="merge", help="拼接指定的pdf文件路径列表")
-def merge(input_paths: List[str], output_path: str = None):
+def merge(
+    input_paths: List[str] = typer.Argument(...),
+    output_path: str = typer.Option(None, "--output-path", "-o", help="output path"),
+):
     """依次拼接指定的pdf文件路径列表
 
     Args:
@@ -56,7 +64,13 @@ def merge(input_paths: List[str], output_path: str = None):
     writer.write(output_path)
 
 @app.command(name="rotate", help="旋转指定pdf文件页面")
-def rotate(input_path: str, start_page: int =1, end_page: int =-1, angle: int =90, output_path: str =None):
+def rotate(
+    input_path: str = typer.Argument(...),
+    start_page: int = typer.Option(1, "--start-page", "-s", help="start page number"),
+    end_page: int = typer.Option(-1, "--end-page", "-e", help="end page number"),
+    angle: int = typer.Option(90, "--angle", "-a", help="angle to rotate"), 
+    output_path: str = typer.Option(None, "--output-path", "-o", help="output path"),
+):
     """旋转指定pdf文件页面
 
     Args:
