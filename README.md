@@ -1,11 +1,13 @@
 # 自用办公常用工具集
 
-## PDF常用操作
+[toc]
+
+## PDF常用工具
 
 1. 截取页面
 
    ```
-   Usage: pdf_operations.py subset [OPTIONS] INPUT_PATH
+   Usage: pdf_utils.py subset [OPTIONS] INPUT_PATH
 
      截取pdf文件部分页面
 
@@ -21,7 +23,7 @@
 2. 拼接页面
 
    ```
-   Usage: pdf_operations.py merge [OPTIONS] INPUT_PATHS...
+   Usage: pdf_utils.py merge [OPTIONS] INPUT_PATHS...
 
      拼接指定的pdf文件路径列表
 
@@ -35,7 +37,7 @@
 3. 旋转页面
 
    ```
-   Usage: pdf_operations.py rotate [OPTIONS] INPUT_PATH
+   Usage: pdf_utils.py rotate [OPTIONS] INPUT_PATH
 
      旋转指定pdf文件页面
 
@@ -49,25 +51,50 @@
      -o, --output-path TEXT    output path
      --help                    Show this message and exit.
    ```
-   ## PPT常用操作
+
+## PPT常用工具
+
+1. 提取备注
+   ```
+   Usage: ppt_utils.py [OPTIONS] INPUT_PATH
+
+     提取pptx备注
+
+   Arguments:
+     INPUT_PATH  [required]
+
+   Options:
+     -o, --output-path TEXT          output path
+     --install-completion [bash|zsh|fish|powershell|pwsh]
+                                     Install completion for the specified shell.
+     --show-completion [bash|zsh|fish|powershell|pwsh]
+                                     Show completion for the specified shell, to
+                                     copy it or customize the installation.
+     --help                          Show this message and exit.
+   ```
 
 
-   1. 提取备注
-      ```
-      Usage: ppt_operations.py [OPTIONS] INPUT_PATH
+## 邮箱常用工具
 
-        提取pptx备注
+1. 发送邮件
+   ```
+   Usage: mail_utils.py [OPTIONS] SUBJECT CONTENT SENDER PASSWORD RECEIVER
 
-      Arguments:
-        INPUT_PATH  [required]
+     qq邮箱发送邮件
 
-      Options:
-        -o, --output-path TEXT          output path
-        --install-completion [bash|zsh|fish|powershell|pwsh]
-                                        Install completion for the specified shell.
-        --show-completion [bash|zsh|fish|powershell|pwsh]
-                                        Show completion for the specified shell, to
-                                        copy it or customize the installation.
-        --help                          Show this message and exit.
-      ```
-   2. xx
+   Arguments:
+     SUBJECT   邮件主题  [required]
+     CONTENT   邮件正文  [required]
+     SENDER    发件人邮箱  [required]
+     PASSWORD  发件人POP3密码  [required]
+     RECEIVER  收件人邮箱  [required]
+
+   Options:
+     --install-completion [bash|zsh|fish|powershell|pwsh]
+                                     Install completion for the specified shell.
+     --show-completion [bash|zsh|fish|powershell|pwsh]
+                                     Show completion for the specified shell, to
+                                     copy it or customize the installation.
+     --help                          Show this message and exit.
+
+   ```
