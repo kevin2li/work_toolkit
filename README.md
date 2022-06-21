@@ -1,5 +1,7 @@
 # 自用办公常用工具集
 
+[toc]
+
 ## PDF常用工具
 
 1. 截取页面
@@ -75,24 +77,24 @@
 ## 邮箱常用工具
 
 1. 发送邮件
+   ```
+   Usage: mail_utils.py [OPTIONS] SUBJECT CONTENT SENDER PASSWORD RECEIVER
 
-```
-Usage: mail_utils.py [OPTIONS] SUBJECT CONTENT SENDER PASSWORD RECEIVER
+     qq邮箱发送邮件
 
-  qq邮箱发送邮件
+   Arguments:
+     SUBJECT   邮件主题  [required]
+     CONTENT   邮件正文  [required]
+     SENDER    发件人邮箱  [required]
+     PASSWORD  发件人POP3密码  [required]
+     RECEIVER  收件人邮箱  [required]
 
-Arguments:
-  SUBJECT   邮件主题  [required]
-  CONTENT   邮件正文  [required]
-  SENDER    发件人邮箱  [required]
-  PASSWORD  发件人POP3密码  [required]
-  RECEIVER  收件人邮箱  [required]
+   Options:
+     --install-completion [bash|zsh|fish|powershell|pwsh]
+                                     Install completion for the specified shell.
+     --show-completion [bash|zsh|fish|powershell|pwsh]
+                                     Show completion for the specified shell, to
+                                     copy it or customize the installation.
+     --help                          Show this message and exit.
 
-Options:
-  --install-completion [bash|zsh|fish|powershell|pwsh]
-                                  Install completion for the specified shell.
-  --show-completion [bash|zsh|fish|powershell|pwsh]
-                                  Show completion for the specified shell, to
-                                  copy it or customize the installation.
-  --help                          Show this message and exit.
-```
+   ```
