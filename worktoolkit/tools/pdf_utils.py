@@ -37,7 +37,7 @@ def subset(
             writer.addpage(reader.pages[page])
         if output_path is None:
             p = Path(input_path)
-            output_path = osp.join(os.getcwd(), f"{p.stem}-rotated.pdf")
+            output_path = osp.join(os.getcwd(), f"{p.stem}-{start_page}-{end_page}.pdf")
         writer.write(output_path)
     except:
         logger.error("截取页面时发生错误！")
@@ -100,6 +100,7 @@ def rotate(
     except:
         logger.error("旋转页面时发生错误！")
         traceback.print_exc()
+
 
 if __name__ == "__main__":
     app()

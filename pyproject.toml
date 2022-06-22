@@ -1,0 +1,36 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worktoolkit"
+version = "1.0.0"
+description = "A toolkit for daily use, including common operations for different filetypes(i.e., .pdf, .ppt, etc.) and more"
+readme = "README.md"
+authors = [{ name = "Kevin2li", email = "kevin2li@qq.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["toolkit", "pdf", "ppt",]
+dependencies = [
+  'typer',
+  'pdfrw',
+  'python-pptx',
+  'python-docx',
+  'loguru',
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = ["pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/kevin2li/work_toolkit"
+
+[project.scripts]
+toolkit = "worktoolkit.__main__:main"
