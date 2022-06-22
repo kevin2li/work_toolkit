@@ -22,7 +22,10 @@ dependencies = [
   'pdfrw',
   'python-pptx',
   'python-docx',
+  'openpyxl',
   'loguru',
+  'tqdm',
+  'qrcode'
 ]
 requires-python = ">=3.10"
 
